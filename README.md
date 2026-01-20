@@ -22,6 +22,23 @@ A Django-based web application for managing a formal shoes shop using MySQL data
 - Git & GitHub
 
 ---
+## 📸 Project Screenshots
+
+### login Page
+![Login Page](Screenshots/login_page.png)
+
+### 🏠 Home Page
+![Home Page](Screenshots/home.png)
+
+### 🛒 Shop Page
+![Shop Page](Screenshots/product_list.png)
+
+### 🛍 Cart Page
+![Cart Page](Screenshots/cart_page.png)
+
+### ⚙ Admin Panel
+![Admin Panel](Screenshots/admin_panel.png)
+
 
 ## ▶️ Run Locally
 ```bash
