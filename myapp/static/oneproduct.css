@@ -1,0 +1,90 @@
+body {
+  background: #f9f9fb;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 40px;
+}
+
+.detail-card {
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.1);
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+  animation: fadeIn 1.2s ease;
+}
+
+.detail-card img {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  height: auto;
+  object-fit: cover;
+}
+
+.detail-info {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detail-info h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: 700;
+  color: #e63946;
+  margin-bottom: 20px;
+}
+
+.desc {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.checkout-btn {
+  display: block;     
+  width: 100%;          
+  padding: 14px;       
+  margin-top: 15px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #3c2b04, #423926);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;  
+}
+
+.checkout-btn:hover {
+  background: linear-gradient(135deg, #9f946a, #877f61);
+  transform: scale(1.03);
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

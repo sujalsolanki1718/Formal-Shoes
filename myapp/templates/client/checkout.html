@@ -1,0 +1,106 @@
+{% include 'client/header.html' %}
+<html>
+  {% load static %}
+  <head>
+    <title>Checkout | Classic Formal Shoes</title>
+    <link rel="stylesheet" href="{% static 'checkout.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+      function togglePayment() {
+        let onlineDiv = document.getElementById("online-payment");
+        let codBtn = document.getElementById("cod-btn");
+        let payBtn = document.getElementById("pay-btn");
+
+        let selected = document.querySelector('input[name="payment"]:checked').value;
+
+        if (selected === "cod") {
+          onlineDiv.style.display = "none";
+          codBtn.style.display = "block";
+          payBtn.style.display = "none";
+        } else {
+          onlineDiv.style.display = "block";
+          codBtn.style.display = "none";
+          payBtn.style.display = "block";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="checkout-container">
+      <h2 class="checkout-title">Checkout</h2>
+
+      <div class="checkout-content">
+        <div class="checkout-form">
+          <h3>Address Information</h3>
+          <form method="post" action="{% url 'checkout' %}">
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="Enter your name" required value="{{nm}}" readonly>
+
+            <label for="mobile">Mobile</label>
+            <input type="tel" name="mobile" placeholder="+91 98765 43210" required value="{{data.mobile}}">
+
+            <label for="district">district</label>
+            <input type="text" name="district" placeholder="district" required value="{{data.district}}">
+
+            <label for="city">city</label>
+            <input type="text" name="city" placeholder="Street, City" required value="{{data.city}}">
+
+            <label for="state">state</label>
+            <input type="text" name="state" placeholder="enter your state" required value="{{data.state}}">
+
+            <label for="pin">Pin code</label>
+            <input type="number" name="pin" placeholder="enter your pin" required value="{{data.pin}}">
+
+            <!-- <h3>Payment Method</h3>
+            <div class="payment-options">
+              <label>
+                <input type="radio" name="payment" value="online" onclick="togglePayment()" checked>
+                Online Payment
+              </label>
+              <label>
+                <input type="radio" name="payment" value="cod" onclick="togglePayment()">
+                Cash on Delivery
+              </label>
+            </div>
+
+            <div id="online-payment" style="display:block; margin:15px 0;">
+              <h4 style="margin-left:50px;">Scan to Pay</h4>
+              <img src="{% static 'images/qrcode.jpg' %}" alt="QR Code" width="200">
+            </div>
+
+         
+            <button type="submit" id="pay-btn" class="place-order-btn">Pay & Place Order</button>
+            <button type="submit" id="cod-btn" class="place-order-btn" style="display:none;">Place COD Order</button> -->
+          <div class="payment-section">
+              <h3>Payment Method</h3>
+              <div class="payment-options">
+                <label>
+                  <input type="radio" name="payment" value="online" onclick="togglePayment()" checked>
+                  Online Payment
+                </label>
+                <label>
+                  <input type="radio" name="payment" value="cod" onclick="togglePayment()">
+                  Cash on Delivery
+                </label>
+              </div>
+
+              <div id="online-payment" style="display:block; margin:15px 0;">
+                <h4>Scan to Pay</h4>
+                <img src="{% static 'images/qrcode.jpg' %}" alt="QR Code" width="200">
+              </div>
+
+              <button type="button" id="pay-btn" class="place-order-btn">Pay & Place Order</button>
+              <button type="submit" id="cod-btn" class="place-order-btn" style="display:none;">Place COD Order</button>
+            </div>
+
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+{% include 'client/footer.html' %}
+

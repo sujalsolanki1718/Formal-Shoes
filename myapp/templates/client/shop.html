@@ -1,0 +1,29 @@
+{% include 'client/header.html' %}
+<html>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'ss.css' %}" type="text/css">
+    <title>Shop Page</title>
+  </head>
+  <body>
+    <div class="shop-container">
+        <br>
+      <h2 class="shop-title">Our Products</h2>
+      <div class="products">
+        {% for dt in product %}
+        <div class="product">
+          <img src="{{dt.image}}" alt="chelsia">
+          <h3>{{dt.title}}</h3>
+          <p class="price">{{dt.price}}</p>
+          <!-- <button class="cbtn">buy now</button> -->
+          <a href="{% url 'oneproduct' dt.id %}" class="cbtn">Buy Now</a>
+
+        </div>
+        {% endfor %}
+
+
+      </div>
+    </div>
+  </body>
+</html>
+{% include 'client/footer.html' %}

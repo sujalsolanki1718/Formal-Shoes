@@ -1,0 +1,57 @@
+{% include 'admin/aheader.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+  {% load static %}
+  <title>View Address</title>
+  <link rel="stylesheet" href="{% static 'admin/viewproducts.css' %}" type="text/css">
+  {% if messages %}
+    {% for message in messages %}
+    <script>
+      alert("{{message}}")
+    </script>
+    {% endfor %}
+  {% endif %}
+</head>
+<body>
+  <div class="table-container">
+    <h2>All Address</h2>
+
+    {% if address %}
+    <table>
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>mobile</th>
+          <th>district</th>
+          <th>city</th>
+          <th>state</th>
+          <th>pin code</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+   
+        <tr>
+          <td>{{ address.1  }}</td>
+          <td>{{ address.2  }}</td>
+          <td>{{ address.3  }}</td>
+          <td>{{ address.4  }}</td>
+          <td>{{ address.5  }}</td>
+          <td>{{ address.6  }}</td>
+
+
+
+
+         
+        </tr>
+      
+      </tbody>
+    </table>
+    {% else %}
+      <div class="no-data">No Address available</div>
+    {% endif %}
+  </div>
+</body>
+</html>

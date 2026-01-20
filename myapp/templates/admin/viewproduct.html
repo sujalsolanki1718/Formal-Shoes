@@ -1,0 +1,53 @@
+{% include 'admin/aheader.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+  {% load static %}
+  <title>View Products</title>
+  <link rel="stylesheet" href="{% static 'admin/viewproducts.css' %}" type="text/css">
+  {% if messages %}
+    {% for message in messages %}
+    <script>
+      alert("{{message}}")
+    </script>
+    {% endfor %}
+  {% endif %}
+</head>
+<body>
+  <div class="table-container">
+    <h2>All Products</h2>
+
+    {% if products %}
+    <table>
+      <thead>
+        <tr>
+          <th>title</th>
+          <th>description</th>
+          <th>Price</th>
+          <th>Image</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for product in products %}
+        <tr>
+          <td>{{ product.title }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price }}</td>
+          <td>
+            <img src="{{ product.image }}" alt="{{ product.title }}">
+          </td>
+          <td>
+            <a href="{% url 'delete' product.id %}">delete ||</a>
+            <a href="{% url 'update' product.id %}">update</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+      <div class="no-data">No products available</div>
+    {% endif %}
+  </div>
+</body>
+</html>

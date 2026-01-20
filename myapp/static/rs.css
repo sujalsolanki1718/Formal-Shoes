@@ -1,0 +1,90 @@
+
+
+body {
+  background: #f8f9fb;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.auth-form {
+  background: #ffffff;
+  padding: 40px 35px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 420px;
+  text-align: center;
+  margin: 60px auto;
+}
+
+h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #222;
+  text-shadow: 2px 1px 2px rgba(0,0,0,0.15);
+}
+
+.form-group {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #163143;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.cell {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
+  font-size: 14.5px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.cell:focus {
+  border-color: #237086;
+  box-shadow: 0 0 8px rgba(35, 112, 134, 0.3);
+}
+
+.btn {
+  width: 100%;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #237086, #054254);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #2a8fa3, #237086);
+}
+
+.switch-auth {
+  font-size: 14px;
+  margin-top: 20px;
+  color: #444;
+}
+
+.switch-auth a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #237086;
+}
+
+.switch-auth a:hover {
+  color: #054254;
+}

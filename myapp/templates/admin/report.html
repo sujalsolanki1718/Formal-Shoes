@@ -1,0 +1,49 @@
+{% include 'admin/aheader.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+  {% load static %}
+  <title>Reports</title>
+  <link rel="stylesheet" href="{% static 'admin/viewproducts.css' %}" type="text/css">
+  {% if messages %}
+    {% for message in messages %}
+    <script>
+      alert("{{message}}")
+    </script>
+    {% endfor %}
+  {% endif %}
+</head>
+<body>
+  <div class="table-container">
+    <h2>All Reports</h2>
+
+    {% if reports %}
+    <table>
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>email</th>
+          <th>subject</th>
+          <th>message</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for report in reports %}
+        <tr>
+          <td>{{ report.name }}</td>
+          <td>{{ report.email }}</td>
+          <td>{{ report.subject }}</td>
+          <td>{{ report.message }}</td>
+
+         
+        
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+      <div class="no-data">No Reports available</div>
+    {% endif %}
+  </div>
+</body>
+</html>

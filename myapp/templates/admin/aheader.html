@@ -1,0 +1,67 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+ {% load static %}
+  <title>Website Header</title>
+  <link rel="stylesheet" href="{% static 'admin/aheader.css'  %}" type="text/css" >
+</head>
+<body>
+ <header class="header">
+  <div class="logo">Admin Panel</div>
+  <nav class="nav">
+    <a href="{% url 'products' %}">Add Products</a>
+    <a href="{% url 'viewproduct' %}">View Products</a>
+    <a href="#">View Orders</a>
+    <a href="#">View Users</a>
+    <a href="#">Reports</a>
+  </nav>
+  <div class="actions">
+    <a href="{% url 'logout' %}" class="btn primary">Logout</a>
+  </div>
+  <div class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav').classList.toggle('active')">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+</body>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  {% load static %}
+  <title>Website Header</title>
+  <link rel="stylesheet" href="{% static 'admin/aheader.css' %}" type="text/css">
+</head>
+<body data-theme="dark">
+  <header class="header">
+    <div class="logo">Admin Panel</div>
+    <nav class="nav">
+      <a href="{% url 'products' %}">Add Products</a>
+      <a href="{% url 'viewproduct' %}">View Products</a>
+      <a href="{% url 'vieworders' %}">View Orders</a>
+      <a href="{% url 'viewusers' %}">View Users</a>
+      <a href="{% url 'report' %}">Reports</a>
+    </nav>
+    <div class="actions">
+      <a href="{% url 'logout' %}" class="btn primary">Logout</a>
+     
+    </div>
+  
+  </header>
+
+  
+</body>
+</html>
+

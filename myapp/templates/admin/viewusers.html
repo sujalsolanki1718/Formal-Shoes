@@ -1,0 +1,49 @@
+{% include 'admin/aheader.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+  {% load static %}
+  <title>View Users</title>
+  <link rel="stylesheet" href="{% static 'admin/viewproducts.css' %}" type="text/css">
+  {% if messages %}
+    {% for message in messages %}
+    <script>
+      alert("{{message}}")
+    </script>
+    {% endfor %}
+  {% endif %}
+</head>
+<body>
+  <div class="table-container">
+    <h2>All Users</h2>
+
+    {% if users %}
+    <table>
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>contact</th>
+          <th>email</th>
+          <th>password</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <td>{{ user.name }}</td>
+          <td>{{ user.contact }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.password }}</td>
+
+         
+        
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+      <div class="no-data">No User available</div>
+    {% endif %}
+  </div>
+</body>
+</html>

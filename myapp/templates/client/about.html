@@ -1,0 +1,60 @@
+{% include 'client/header.html' %}
+<html>
+  {% load static %}
+  <head>
+    <title>About Us | Classic Formal Shoes</title>
+    <link rel="stylesheet" href="{% static 'as.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+    <section class="about-hero">
+      <div class="overlay"></div>
+      <div class="about-hero-content">
+        <h1>About Us</h1>
+        <p>Where timeless craftsmanship meets modern elegance</p>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="about-content">
+        <h2>Our Story</h2>
+        <p>Classic Formal Shoes was born from a passion for creating shoes that embody sophistication, comfort, and timeless style. Each pair is carefully handcrafted by artisans who have mastered the art of shoemaking, using only the finest materials.</p>
+      </div>
+      <div class="about-image">
+        <img src="{% static 'images/about-story.jpg' %}" alt="Our Story">
+      </div>
+    </section>
+
+    <section class="about-section reverse">
+      <div class="about-image">
+        <img src="{% static 'images/about-craft.jpg' %}" alt="Craftsmanship">
+      </div>
+      <div class="about-content">
+        <h2>Craftsmanship</h2>
+        <p>Our shoes are more than just footwear—they are a statement of elegance. With attention to detail and dedication to perfection, we merge traditional shoemaking techniques with modern design, delivering unparalleled quality.</p>
+      </div>
+    </section>
+
+    <section class="about-values">
+      <h2>Our Values</h2>
+      <div class="value-grid">
+        <div class="value-card">
+          <i class="fas fa-gem"></i>
+          <h3>Quality</h3>
+          <p>We believe in uncompromising quality, ensuring every shoe is crafted with precision.</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-hand-holding-heart"></i>
+          <h3>Trust</h3>
+          <p>Our brand is built on trust, offering authenticity and reliability in every purchase.</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-shoe-prints"></i>
+          <h3>Style</h3>
+          <p>Elegance and timeless designs that never go out of fashion.</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+{% include 'client/footer.html' %}

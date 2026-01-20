@@ -1,0 +1,45 @@
+{% include 'client/header.html' %}
+<html>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'cs.css' %}" type="text/css">
+    <title>My Cart</title>
+   
+  </head>
+  <body>
+    <div class="cart-container">
+      <h2 class="cart-title">My Shopping Cart</h2>
+
+      <div class="cart-items">
+        {% if product %}
+          {% for p in product %}
+      
+        <div class="cart-item">
+          <img src="{{ p.image }}" alt="Chelsia">
+          <div class="item-details">
+            <h3>{{ p.title }}</h3>
+            <p class="price">{{ p.price }}</p>
+          </div>
+          <a class="remove-btn" href="{% url 'remove' p.id %}">Remove</a>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+       
+
+      <div class="cart-summary">
+        <h3>Order Summary</h3>
+        <p>Total Items: <span>{{items}}</span></p>
+        <p>Total Price: <span>{{totals}}</span></p>
+        <!-- <button class="checkout-btn">Proceed to Checkout</button> -->
+         {% if items %}
+         <a href="{% url 'checkout' %}" class="checkout-btn">Proceed to Checkout</a>
+         
+         {% else %}
+        <a href="{% url 'shop' %}" class="checkout-btn">Add items to cart</a>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>
+{% include 'client/footer.html' %}

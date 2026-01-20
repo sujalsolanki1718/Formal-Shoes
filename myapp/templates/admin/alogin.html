@@ -1,0 +1,39 @@
+
+<html>
+  {% load static %}
+  <head>
+    <link rel="stylesheet" href="{% static 'admin/als.css' %}" type="text/css">
+    <title>Login Page</title>
+    {% if messages %}
+         {% for message in messages %}
+         <script>
+          alert("{{message}}")
+         </script>
+         {% endfor %}
+    {% endif %}
+  </head>
+  <body>
+    <div class="login-container">
+      <form method="post">
+        {% csrf_token %}
+        <h2>Login</h2>
+
+        <div class="input-group">
+          <label>Email</label>
+          <input class="cell" name="email" type="email" required placeholder="Enter your email">
+        </div>
+
+        <div class="input-group">
+          <label>Password</label>
+          <input class="cell" name="pswd" type="password" required placeholder="Enter your password">
+        </div>
+
+        <input class="btn" type="submit" value="Login">
+
+      
+      </form>
+    </div>
+   
+  </body>
+</html>
+ 

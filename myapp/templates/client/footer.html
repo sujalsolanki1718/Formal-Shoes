@@ -1,0 +1,41 @@
+<html>
+    <head>
+    {% load static %}
+     <link rel="stylesheet" href="{% static 'fs.css' %}" type="text/css">
+    
+    </head>
+    <body>
+
+        <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+            <h3>Classic Formal Shoes</h3>
+            <p>Handcrafted shoes designed for elegance and comfort.</p>
+            </div>
+
+            <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="{% url 'shop' %}">Shop</a></li>
+                <li><a href="{% url 'cart' %}">Cart</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>designed & developed : sujal</p>
+        </div>
+        </footer>
+   </body>
+</html>

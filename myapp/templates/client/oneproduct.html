@@ -1,0 +1,35 @@
+{% include 'client/header.html' %}
+<html>
+<head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'oneproduct.css' %}" type="text/css">
+  <title>Product Details</title>
+   
+</head>
+<body>
+  <form method="post">
+    {% csrf_token %}
+    <div class="detail-container">
+      <div class="detail-card">
+     
+        <img name="image" src="{{ product.image }}" alt="{{ product.title }}">
+        
+        
+        <div class="detail-info">
+          <h2>{{ product.title }}</h2>
+          <p class="price">₹ {{ product.price }}</p>
+          <p class="desc">{{ product.description }}</p>
+          
+      
+          <input type="hidden" name="title" value="{{ product.title }}">
+          <input type="hidden" name="price" value="{{ product.price }}">
+          <input type="hidden" name="description" value="{{ product.description }}">
+          <input type="submit" class="checkout-btn" value="add to cart">
+
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
+{% include 'client/footer.html' %}

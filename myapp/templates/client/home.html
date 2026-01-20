@@ -1,0 +1,89 @@
+{% include 'client/header.html' %}
+<html>
+  {% load static %}
+  <head>
+    <title>Classic Formal Shoes | Home</title>
+    <link rel="stylesheet" href="{% static 'hs.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    
+    <style>
+      .cbtnh {
+  background: linear-gradient(135deg, #111, #333);
+  padding: 10px 26px;   
+  width: 95%;          
+  max-width: 320px;    
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;      
+  color: #ffd700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.cbtnh:hover {
+  background: linear-gradient(135deg, #ffd700, #e6b800);
+  color: #111;
+}
+
+    </style>
+  </head>
+
+  <body>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Step into Elegance</h1>
+        <p>Discover our premium collection of handcrafted formal shoes.</p>
+        <a href="{% url 'shop' %}" class="cbtn">Shop Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </section>
+
+    <section class="featured">
+      <h2>Featured Styles</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="{% static 'images/shoe1.jpg' %}" alt="Classic Oxford">
+          <h3>Classic Oxford</h3>
+          <a class="cbtnh" href="{% url 'shop' %}" >View more</a>
+        </div>
+
+        <div class="product-card">
+          <img src="{% static 'images/shoe2.jpg' %}" alt="Leather Derby">
+          <h3>Leather Derby</h3>
+           <a class="cbtnh" href="{% url 'shop' %}" >View more</a>
+        </div>
+
+        <div class="product-card">
+          <img src="{% static 'images/shoe3.jpg' %}" alt="Elegant Loafer">
+          <h3>Elegant Loafer</h3>
+           <a class="cbtnh" href="{% url 'shop' %}" >View more</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-values">
+      <h2>Our Values</h2>
+      <div class="value-grid">
+        <div class="value-card">
+          <i class="fas fa-gem"></i>
+          <h3>Quality</h3>
+          <p>We believe in uncompromising quality, ensuring every shoe is crafted with precision.</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-hand-holding-heart"></i>
+          <h3>Trust</h3>
+          <p>Our brand is built on trust, offering authenticity and reliability in every purchase.</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-shoe-prints"></i>
+          <h3>Style</h3>
+          <p>Elegance and timeless designs that never go out of fashion.</p>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
+{% include 'client/footer.html' %}
