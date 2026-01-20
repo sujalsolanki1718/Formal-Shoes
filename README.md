@@ -7,6 +7,7 @@ A Django-based web application for managing a formal shoes shop using MySQL data
 ## 🚀 Features
 - Add, update, delete shoes
 - Product listing
+- User authentication
 - Django Admin Panel
 - CRUD operations
 - MySQL database integration
