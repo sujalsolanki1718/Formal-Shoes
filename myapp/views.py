@@ -139,7 +139,8 @@ def checkout(request):
                       "title":row[2],
                        "discription":row[3],
                         "price":row[4],
-                         "image":row[5]
+                         "image":row[5],
+                        
                 }for row in cart_data
             ]
             insert_order="insert into orders(pid,title,discription,price,image,username) values(%s,%s,%s,%s,%s,%s)"
@@ -179,6 +180,8 @@ def checkout(request):
 
 def oneproduct(request,id):
      username=request.session.get("clientuser")
+     if not username:
+        return redirect("login")
      with connection.cursor() as cursor:
         query="select * from products where id=%s"
         cursor.execute(query,[id])
@@ -188,7 +191,8 @@ def oneproduct(request,id):
                 "title":data[1],
                 "description":data[2],
                 "price":data[3],
-                "image":data[4]
+                "image":data[4],
+             
             }
         
         if request.method== 'POST':
